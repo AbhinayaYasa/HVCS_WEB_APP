@@ -1,0 +1,34 @@
+import {
+  signInWithEmailAndPassword,
+  signOut as firebaseSignOut,
+  onAuthStateChanged,
+  User,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from 'firebase/auth';
+import { auth } from './firebase';
+
+export async function signIn(email: string, password: string): Promise<User> {
+  const { user } = await signInWithEmailAndPassword(auth, email, password);
+  return user;
+}
+
+export async function signUp(
+  email: string,
+  password: string,
+  displayName?: string
+): Promise<User> {
+  const { user } = await createUserWithEmailAndPassword(auth, email, password);
+  if (displayName) {
+    await updateProfile(user, { displayName });
+  }
+  return user;
+}
+
+export async function signOut(): Promise<void> {
+  await firebaseSignOut(auth);
+}
+
+export function subscribeAuth(callback: (user: User | null) => void): () => void {
+  return onAuthStateChanged(auth, callback);
+}
