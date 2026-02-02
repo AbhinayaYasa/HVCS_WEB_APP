@@ -282,3 +282,56 @@ input::placeholder, textarea::placeholder {
   padding: 2rem;
   color: var(--color-text-muted);
 }
+
+/* Service Request Form */
+.service-request-form {
+  max-width: 560px;
+  background: var(--color-surface);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 169, 98, 0.2);
+}
+
+.service-request-form h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.form-description {
+  margin: 0 0 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-success {
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+.form-error {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}

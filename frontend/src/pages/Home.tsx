@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import ServiceRequestForm from '../components/ServiceRequestForm';
 
 export default function Home() {
   return (
@@ -13,6 +14,12 @@ export default function Home() {
           />
         </div>
         <Link to="/gallery" className="btn">View Gallery</Link>
+      </section>
+
+      <section>
+        <h2>Request a Service</h2>
+        <p>Select a category, fill out the form below, and we&apos;ll get in touch.</p>
+        <ServiceRequestForm />
       </section>
 
       <section>

@@ -8,5 +8,8 @@
     "preview": "npm run preview --prefix frontend",
     "install:frontend": "npm install --prefix frontend"
   },
-  "description": "Hudson Valley Concierge Services — Web application"
+  "description": "Hudson Valley Concierge Services — Web application",
+  "dependencies": {
+    "firebase": "^12.8.0"
+  }
 }
