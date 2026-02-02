@@ -72,6 +72,19 @@ VITE_FIREBASE_APP_ID=your-app-id
 
 ---
 
+## Deploy to Vercel
+
+1. Connect your GitHub repo to Vercel.
+2. **Add environment variables** (required for Firebase):
+   - In Vercel: Project Settings → Environment Variables
+   - Add each variable from `frontend/.env.example`:
+   - `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`, `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, `VITE_FIREBASE_APP_ID`, `VITE_FIREBASE_MEASUREMENT_ID`
+3. Redeploy after adding env vars.
+
+Without these variables, the app will show a blank page or an error.
+
+---
+
 ## Run Locally
 
 From the project root:
