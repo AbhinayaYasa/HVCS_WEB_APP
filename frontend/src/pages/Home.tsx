@@ -1,4 +1,4 @@
-import ServiceRequestForm from '../components/ServiceRequestForm';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -13,13 +13,7 @@ export default function Home() {
             alt="Hudson Valley Concierge Service — Concierge Portfolio"
           />
         </div>
-        <a href="#request" className="btn btn-primary">Get Started</a>
-      </section>
-
-      <section id="request">
-        <h2>Request a Service</h2>
-        <p>Select a category, fill out the form below, and we&apos;ll get in touch.</p>
-        <ServiceRequestForm />
+        <Link to="/request" className="btn btn-primary">Get Started</Link>
       </section>
 
       <section>

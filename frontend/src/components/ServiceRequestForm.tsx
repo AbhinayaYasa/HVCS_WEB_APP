@@ -107,14 +107,14 @@ export default function ServiceRequestForm() {
       </div>
 
       <div className="form-field">
-        <label htmlFor="details">Details</label>
+        <label htmlFor="details">Service Request</label>
         <textarea
           id="details"
           value={details}
           onChange={(e) => setDetails(e.target.value)}
           required
           rows={4}
-          placeholder="Describe your request..."
+          placeholder="Describe your service request..."
           style={{ ...inputStyle, resize: 'vertical' }}
         />
       </div>
@@ -126,7 +126,7 @@ export default function ServiceRequestForm() {
         <p className="form-error">{errorMessage}</p>
       )}
 
-      <button type="submit" className="btn" disabled={status === 'submitting'}>
+      <button type="submit" className="btn btn-nav" disabled={status === 'submitting'} style={{ width: '100%', marginTop: '0.5rem' }}>
         {status === 'submitting' ? 'Submitting…' : 'Submit Request'}
       </button>
     </form>
