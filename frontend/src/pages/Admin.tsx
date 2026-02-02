@@ -104,7 +104,7 @@ function AdminLogin() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        style={{ padding: '0.5rem 1rem', background: 'var(--color-surface)', border: '1px solid rgba(201,169,98,0.3)', borderRadius: 4, color: 'var(--color-text)' }}
+        style={{ padding: '0.5rem 1rem', background: 'var(--color-bg-subtle)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 4, color: 'var(--color-text)' }}
       />
       <input
         type="password"
@@ -112,10 +112,10 @@ function AdminLogin() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
-        style={{ padding: '0.5rem 1rem', background: 'var(--color-surface)', border: '1px solid rgba(201,169,98,0.3)', borderRadius: 4, color: 'var(--color-text)' }}
+        style={{ padding: '0.5rem 1rem', background: 'var(--color-bg-subtle)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 4, color: 'var(--color-text)' }}
       />
       {error && <p style={{ color: '#c9302c' }}>{error}</p>}
-      <button type="submit" className="btn">Sign In</button>
+        <button type="submit" className="btn btn-nav">Sign In</button>
     </form>
   );
 }

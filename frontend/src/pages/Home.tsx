@@ -1,22 +1,22 @@
-import { Link } from 'react-router-dom';
 import ServiceRequestForm from '../components/ServiceRequestForm';
 
 export default function Home() {
   return (
     <>
       <section className="hero">
-        <h1>Hudson Valley Concierge Services</h1>
-        <p>Your trusted partner for seamless experiences in the Hudson Valley</p>
+        <p className="hero-subtitle">Concierge Services</p>
+        <h1>The leader in personalized service</h1>
+        <p className="hero-tagline">Your trusted partner for seamless experiences in the Hudson Valley</p>
         <div className="hero-image">
           <img
-            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80"
-            alt="Hudson Valley scenery"
+            src="/hero-banner.png"
+            alt="Hudson Valley Concierge Service — Concierge Portfolio"
           />
         </div>
-        <Link to="/gallery" className="btn">View Gallery</Link>
+        <a href="#request" className="btn btn-primary">Get Started</a>
       </section>
 
-      <section>
+      <section id="request">
         <h2>Request a Service</h2>
         <p>Select a category, fill out the form below, and we&apos;ll get in touch.</p>
         <ServiceRequestForm />
@@ -24,7 +24,7 @@ export default function Home() {
 
       <section>
         <h2>Welcome</h2>
-        <p>Explore our services and gallery. Configure Firebase to enable the full gallery and admin features.</p>
+        <p>Explore our services and gallery.</p>
       </section>
     </>
   );

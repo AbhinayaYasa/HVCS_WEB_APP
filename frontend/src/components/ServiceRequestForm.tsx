@@ -5,8 +5,8 @@ import { SERVICE_REQUEST_CATEGORIES } from '../types/serviceRequest';
 
 const inputStyle: React.CSSProperties = {
   padding: '0.6rem 1rem',
-  background: 'var(--color-surface)',
-  border: '1px solid rgba(201, 169, 98, 0.3)',
+  background: 'var(--color-bg-subtle)',
+  border: '1px solid rgba(255, 255, 255, 0.15)',
   borderRadius: 4,
   color: 'var(--color-text)',
   width: '100%',

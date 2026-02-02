@@ -73,19 +73,19 @@ export default function UploadDropzone({
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          style={{ padding: '0.5rem 1rem', background: 'var(--color-surface)', border: '1px solid rgba(201,169,98,0.3)', borderRadius: 4, color: 'var(--color-text)' }}
+          style={{ padding: '0.5rem 1rem', background: 'var(--color-bg-subtle)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 4, color: 'var(--color-text)' }}
         />
         <textarea
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={2}
-          style={{ padding: '0.5rem 1rem', background: 'var(--color-surface)', border: '1px solid rgba(201,169,98,0.3)', borderRadius: 4, color: 'var(--color-text)' }}
+          style={{ padding: '0.5rem 1rem', background: 'var(--color-bg-subtle)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 4, color: 'var(--color-text)' }}
         />
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value as GalleryCategory)}
-          style={{ padding: '0.5rem 1rem', background: 'var(--color-surface)', border: '1px solid rgba(201,169,98,0.3)', borderRadius: 4, color: 'var(--color-text)' }}
+          style={{ padding: '0.5rem 1rem', background: 'var(--color-bg-subtle)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 4, color: 'var(--color-text)' }}
         >
           {GALLERY_CATEGORIES.map((c) => (
             <option key={c} value={c}>{c}</option>
@@ -95,7 +95,7 @@ export default function UploadDropzone({
           placeholder="Tags (comma-separated)"
           value={tags}
           onChange={(e) => setTags(e.target.value)}
-          style={{ padding: '0.5rem 1rem', background: 'var(--color-surface)', border: '1px solid rgba(201,169,98,0.3)', borderRadius: 4, color: 'var(--color-text)' }}
+          style={{ padding: '0.5rem 1rem', background: 'var(--color-bg-subtle)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 4, color: 'var(--color-text)' }}
         />
         <label>
           <input
