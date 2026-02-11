@@ -129,10 +129,32 @@ img {
 .footer {
   background: var(--color-bg);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   text-align: center;
   color: var(--color-text-muted);
   font-size: 0.9rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  color: var(--color-text-muted);
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.footer-social a:hover {
+  color: var(--color-text);
+  opacity: 0.9;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
 }
 
 /* Buttons */
