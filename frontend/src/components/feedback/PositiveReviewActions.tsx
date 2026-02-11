@@ -32,6 +32,9 @@ export default function PositiveReviewActions({ token, testimonialText }: Positi
       <p className="positive-review-message">
         We&apos;re glad you had a great experience. Would you like to share it publicly?
       </p>
+      <p className="positive-review-hint">
+        You may need to be logged into Facebook or Instagram to view our pages.
+      </p>
       <div className="review-buttons">
         <a
           href={REVIEW_LINKS.google}

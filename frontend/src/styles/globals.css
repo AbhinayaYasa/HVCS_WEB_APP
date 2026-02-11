@@ -526,8 +526,16 @@ input::placeholder, textarea::placeholder {
 .positive-review-message {
   font-size: 1.05rem;
   color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   line-height: 1.5;
+}
+
+.positive-review-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
 }
 
 .review-buttons {
