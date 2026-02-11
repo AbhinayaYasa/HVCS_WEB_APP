@@ -10,10 +10,10 @@ export default function Home() {
         <div className="hero-image">
           <img
             src="/hero-banner.png"
-            alt="Hudson Valley Concierge Service — Concierge Portfolio"
+            alt="Hudson Valley Concierge Service"
           />
         </div>
-        <Link to="/request" className="btn btn-primary">Get Started</Link>
+        <Link to="/request" className="btn btn-primary">Leave Feedback</Link>
       </section>
 
       <section>

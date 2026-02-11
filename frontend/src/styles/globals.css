@@ -424,3 +424,206 @@ input::placeholder, textarea::placeholder {
   color: #dc3545;
   margin-bottom: 1rem;
 }
+
+/* Feedback Hub */
+.feedback-page {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.feedback-page-content {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+.feedback-page-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.feedback-muted {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.feedback-form {
+  background: var(--color-surface);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.feedback-rating-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.15s, transform 0.1s;
+}
+
+.star-btn:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.star-btn.filled .star-icon,
+.star-btn:hover .star-icon {
+  color: #fbbf24;
+}
+
+.star-btn .star-icon {
+  display: block;
+}
+
+.feedback-textarea {
+  min-height: 80px;
+}
+
+.feedback-submit {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  min-height: 48px;
+}
+
+/* Positive review actions */
+.positive-review-actions {
+  background: var(--color-surface);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.positive-review-message {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.review-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.review-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  min-height: 52px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: var(--color-bg-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.review-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--color-text);
+}
+
+.review-btn-icon {
+  font-size: 1.25rem;
+}
+
+.review-btn-share {
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Issue feedback form */
+.issue-feedback-form {
+  background: var(--color-surface);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.issue-feedback-message {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.issue-select,
+.issue-textarea {
+  min-height: 48px;
+}
+
+.issue-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.issue-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: #ffffff;
+}
+
+.issue-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem;
+  min-height: 48px;
+}
+
+@media (max-width: 480px) {
+  .feedback-page-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .star-btn {
+    font-size: 2rem;
+  }
+
+  .review-btn {
+    min-height: 48px;
+    font-size: 0.95rem;
+  }
+}

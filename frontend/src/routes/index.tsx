@@ -6,9 +6,11 @@ import NotFound from '../pages/NotFound';
 const Gallery = lazy(() => import('../pages/Gallery'));
 const Admin = lazy(() => import('../pages/Admin'));
 
+// Feedback Hub: /request and /feedback (for post-trip links with ?token=)
 export const routes = [
   { path: '/', element: <Home /> },
   { path: '/request', element: <RequestService /> },
+  { path: '/feedback', element: <RequestService /> },
   {
     path: '/gallery',
     element: (
