@@ -4,6 +4,7 @@ import StarRating from '../components/feedback/StarRating';
 import PositiveReviewActions from '../components/feedback/PositiveReviewActions';
 import IssueFeedbackForm from '../components/feedback/IssueFeedbackForm';
 import { trackEvent } from '../lib/tracking';
+import { createFeedback } from '../lib/feedback';
 
 /**
  * Validates token via backend API. Stubbed for now — returns true if token exists.
@@ -42,6 +43,7 @@ export default function RequestService() {
   const [tokenValid, setTokenValid] = useState<boolean | null>(null);
   const [step, setStep] = useState<Step>('form');
   const [rating, setRating] = useState(0);
+  const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting'>('idle');
 
@@ -60,7 +62,7 @@ export default function RequestService() {
 
   async function handleFeedbackSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (rating < 1) return;
+    if (rating < 1 || !name.trim()) return;
     setStatus('submitting');
 
     trackEvent({
@@ -74,6 +76,17 @@ export default function RequestService() {
       token,
       rating,
     });
+
+    try {
+      await createFeedback({
+        rating,
+        name: name.trim(),
+        comment: comment.trim() || undefined,
+        token,
+      });
+    } catch {
+      // Continue to next step even if Firestore fails
+    }
 
     if (rating >= 4) {
       setStep('positive');
@@ -120,6 +133,18 @@ export default function RequestService() {
             Your feedback helps us serve you better.
           </p>
           <form onSubmit={handleFeedbackSubmit} className="feedback-form">
+            <div className="form-field">
+              <label htmlFor="feedback-name">Your name (required)</label>
+              <input
+                id="feedback-name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your name"
+                required
+                style={inputStyle}
+              />
+            </div>
             <div className="feedback-rating-wrap">
               <StarRating value={rating} onChange={setRating} />
             </div>
@@ -138,7 +163,7 @@ export default function RequestService() {
             <button
               type="submit"
               className="btn btn-nav feedback-submit"
-              disabled={rating < 1 || status === 'submitting'}
+              disabled={rating < 1 || !name.trim() || status === 'submitting'}
             >
               {status === 'submitting' ? 'Submitting…' : 'Submit Feedback'}
             </button>
@@ -169,7 +194,13 @@ export default function RequestService() {
       <div className="feedback-page">
         <div className="feedback-page-content">
           <h1>We appreciate your feedback</h1>
-          <IssueFeedbackForm token={token} onSubmitted={handleIssueFormSubmitted} />
+          <IssueFeedbackForm
+            token={token}
+            rating={rating}
+            name={name}
+            initialComment={comment}
+            onSubmitted={handleIssueFormSubmitted}
+          />
         </div>
       </div>
     );

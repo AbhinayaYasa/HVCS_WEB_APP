@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { trackEvent } from '../../lib/tracking';
+import { createFeedback } from '../../lib/feedback';
 
 export type IssueCategory = 'Driver experience' | 'Scheduling' | 'Communication' | 'Vehicle' | 'Other';
 
@@ -13,6 +14,9 @@ const ISSUE_CATEGORIES: IssueCategory[] = [
 
 interface IssueFeedbackFormProps {
   token?: string;
+  rating: number;
+  name: string;
+  initialComment?: string;
   onSubmitted: () => void;
 }
 
@@ -27,7 +31,7 @@ const inputStyle: React.CSSProperties = {
   fontSize: '1rem',
 };
 
-export default function IssueFeedbackForm({ token, onSubmitted }: IssueFeedbackFormProps) {
+export default function IssueFeedbackForm({ token, rating, name, initialComment, onSubmitted }: IssueFeedbackFormProps) {
   const [category, setCategory] = useState<IssueCategory>('Driver experience');
   const [comment, setComment] = useState('');
   const [followUp, setFollowUp] = useState(false);
@@ -46,7 +50,20 @@ export default function IssueFeedbackForm({ token, onSubmitted }: IssueFeedbackF
       comment: comment || undefined,
     });
 
-    // Stub: assume success (backend would persist)
+    try {
+      await createFeedback({
+        rating,
+        name: name.trim() || undefined,
+        initial_comment: initialComment?.trim() || undefined,
+        comment: comment.trim() || undefined,
+        token,
+        issue_category: category,
+        follow_up_request: followUp,
+      });
+    } catch {
+      // Continue even if Firestore fails
+    }
+
     setStatus('idle');
     onSubmitted();
   }

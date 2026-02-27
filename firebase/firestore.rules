@@ -11,5 +11,10 @@ service cloud.firestore {
       allow create: if true;
       allow read, update, delete: if request.auth != null;
     }
+    // Feedback Hub: anyone can create, only auth can read (admin)
+    match /feedback/{feedbackId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
   }
 }
