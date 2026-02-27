@@ -6,8 +6,9 @@ interface PositiveReviewActionsProps {
 }
 
 // Business social and review URLs. Override via env if needed.
+// For Google: set VITE_GOOGLE_REVIEW_URL with your Place ID, e.g. https://search.google.com/local/writereview?placeid=ChIJ...
 const REVIEW_LINKS = {
-  google: import.meta.env.VITE_GOOGLE_REVIEW_URL ?? 'https://search.google.com/local/writereview?placeid=',
+  google: import.meta.env.VITE_GOOGLE_REVIEW_URL ?? 'https://www.google.com/search?q=Hudson+Valley+Concierge+Service+reviews',
   facebook: import.meta.env.VITE_FACEBOOK_PAGE_URL ?? 'https://www.facebook.com/hvconcierge/reviews',
   yelp: import.meta.env.VITE_YELP_REVIEW_URL ?? 'https://www.yelp.com/writeareview',
   instagram: 'https://www.instagram.com/hvconcierge/',
