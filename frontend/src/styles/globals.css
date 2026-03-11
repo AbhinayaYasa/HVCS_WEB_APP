@@ -227,17 +227,27 @@ img {
   margin-bottom: 2rem;
 }
 
-.hero-image {
+.hero-media {
   margin: 2rem auto 2.5rem;
   max-width: 900px;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 16/9;
+  background: var(--color-surface);
+  position: relative;
 }
 
-.hero-image img {
+.hero-media .hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  aspect-ratio: 16/9;
+  height: 100%;
+  border: none;
+}
+
+.hero-media video.hero-video {
   object-fit: cover;
 }
 

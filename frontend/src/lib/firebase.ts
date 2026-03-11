@@ -14,7 +14,15 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-const app = initializeApp(firebaseConfig);
+const hasConfig = !!(
+  firebaseConfig.apiKey &&
+  firebaseConfig.projectId &&
+  firebaseConfig.appId
+);
+
+const app = hasConfig
+  ? initializeApp(firebaseConfig)
+  : initializeApp(firebaseConfig, 'fallback');
 
 // Analytics only works in browser
 let analytics: ReturnType<typeof getAnalytics> | null = null;

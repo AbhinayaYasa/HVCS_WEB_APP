@@ -32,6 +32,8 @@ pnpm-debug.log*
 
 # Firebase
 .firebase/
+firebase/functions/.env
+firebase/functions/.env.*
 firebase-debug.log
 firestore-debug.log
 
