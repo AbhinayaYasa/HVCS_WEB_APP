@@ -35,11 +35,6 @@ export default function Home() {
         </div>
         <Link to="/request" className="btn btn-primary">Leave Feedback</Link>
       </section>
-
-      <section>
-        <h2>Welcome</h2>
-        <p>Explore our services and gallery.</p>
-      </section>
     </>
   );
 }

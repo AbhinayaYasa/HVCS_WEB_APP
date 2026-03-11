@@ -78,12 +78,16 @@ export default function RequestService() {
     });
 
     try {
-      await createFeedback({
-        rating,
-        name: name.trim(),
-        comment: comment.trim() || undefined,
-        token,
-      });
+      // Only create feedback doc for high ratings here. For low ratings (1–3),
+      // wait for the issue form submit so we send only one email.
+      if (rating >= 4) {
+        await createFeedback({
+          rating,
+          name: name.trim(),
+          comment: comment.trim() || undefined,
+          token,
+        });
+      }
     } catch {
       // Continue to next step even if Firestore fails
     }
