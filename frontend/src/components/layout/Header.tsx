@@ -24,7 +24,8 @@ export default function Header() {
       <div className="header-inner">
         <NavLink to="/" className="logo-link">
           <img src="/logo.png" alt="Hudson Valley Concierge Service" className="logo-img" />
-          <span className="logo-text">Hudson Valley Concierge Service</span>
+          <span className="logo-text logo-text-full">Hudson Valley Concierge Service</span>
+          <span className="logo-text logo-text-short">HVCS</span>
         </NavLink>
         <nav>
           <NavLink to="/">Home</NavLink>
