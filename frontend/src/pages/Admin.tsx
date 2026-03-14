@@ -193,8 +193,13 @@ function AdminLogin() {
     try {
       const { signIn } = await import('../lib/auth');
       await signIn(email, password);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Sign in failed');
+    } catch (err: unknown) {
+      const authError = err as { code?: string };
+      if (authError?.code?.startsWith('auth/')) {
+        setError('Only admins can sign in here. The credentials you entered are incorrect.');
+      } else {
+        setError(err instanceof Error ? err.message : 'Sign in failed');
+      }
     }
   }
 

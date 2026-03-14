@@ -26,7 +26,6 @@ export default function Home() {
               muted
               loop
               playsInline
-              controls
               className="hero-video"
             >
               Your browser does not support the video tag.
